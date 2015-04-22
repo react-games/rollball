@@ -70,24 +70,24 @@ function init() {
   }
 
 	function controllerListener() {
-	// 	gp = navigator.getGamepads()[0].buttons;
-		
-	// 	var buttonPressed = {
-	// 		gpUp: gp[12].pressed,
-	// 		gpDown: gp[13].pressed,
-	// 		gpLeft: gp[14].pressed,
-	// 		gpRight: gp[15].pressed
-	// 	};
+	//  gp = navigator.getGamepads()[0].buttons;
 
-  // 	game.dot.changeDir(buttonPressed);
-	}
+  //  var buttonPressed = {
+  //    gpUp: gp[12].pressed,
+  //    gpDown: gp[13].pressed,
+  //    gpLeft: gp[14].pressed,
+  //    gpRight: gp[15].pressed
+  //  };
+
+  //  game.dot.changeDir(buttonPressed);
+  }
 
 	(function calcMax() {
-	  maxX = $("#container").width() - $dot.outerWidth();
-	  maxY = $("#container").height() - $dot.outerHeight();
-	})();
+    maxX = $("#container").width() - $dot.outerWidth();
+    maxY = $("#container").height() - $dot.outerHeight();
+  })();
 
-	return {
-		dot: dot()
-	};
+  return {
+    dot: dot()
+  };
 }
