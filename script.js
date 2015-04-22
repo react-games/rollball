@@ -70,7 +70,7 @@ function init() {
   }
   
   function controllerListener() {
-	//  gp = navigator.getGamepads()[0].buttons;
+  //  gp = navigator.getGamepads()[0].buttons;
 
   //  var buttonPressed = {
   //    gpUp: gp[12].pressed,
