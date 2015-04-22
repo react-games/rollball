@@ -68,8 +68,8 @@ function init() {
       changeDir: changeDir
     };
   }
-
-	function controllerListener() {
+  
+  function controllerListener() {
 	//  gp = navigator.getGamepads()[0].buttons;
 
   //  var buttonPressed = {
