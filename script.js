@@ -1,5 +1,4 @@
 var game = init();
-game.calcMax();
 
 $(document).keydown(function(event) {
   game.dot.changeDir(event.keyCode);
@@ -7,15 +6,15 @@ $(document).keydown(function(event) {
 });
 
 function init() {
-	var $dot = $("#dot")
-		, distance = 10
-		, rate = 40
-		, min = 0	
-		, maxY
-		, maxX;
+  var $dot = $("#dot"),
+      distance = 10,
+		  rate = 40,
+		  min = 0,
+		  maxY,
+		  maxX;
 
-	var controllerListenerInterval = setInterval(controllerListener, 5);
-
+  var controllerListenerInterval = setInterval(controllerListener, 5);
+  
   function dot() {
     var direction = "";
     var angle = 0;
@@ -27,20 +26,20 @@ function init() {
       var top = parseInt($dot.css('top'));
 
       if (direction === "L" && left > min) { // left
-        $dot.css("left", left - distance+"px")
+        $dot.css("left", left - distance+"px");
         rotate(-30);
       } 
       else if (direction === "R" && left < maxX) { // right
-        $dot.css("left", left + distance+"px")
+        $dot.css("left", left + distance+"px");
         rotate(30);
       } 
       else if (direction === "U" && top > min) { // up
-        $dot.css("top", top - distance+"px")
+        $dot.css("top", top - distance+"px");
       } 
       else if (direction === "D" && top < maxY) { // down
-        $dot.css("top", top + distance+"px")
-      };
-    };
+        $dot.css("top", top + distance+"px");
+      }
+    }
 
     function rotate(deg) {
       angle = (angle += deg) % 360;
@@ -62,13 +61,13 @@ function init() {
       } else if (k === 32) { // stop
         direction = ""; 
       } 
-    };
+    }
 
     return {
       rotate: rotate,
       changeDir: changeDir
-    }
-  };
+    };
+  }
 
 	function controllerListener() {
 	// 	gp = navigator.getGamepads()[0].buttons;
@@ -81,15 +80,14 @@ function init() {
 	// 	};
 
 	// 	game.dot.changeDir(buttonPressed);
-	};
+	}
 
-	function calcMax() {
+	(function calcMax() {
 	  maxX = $("#container").width() - $dot.outerWidth();
 	  maxY = $("#container").height() - $dot.outerHeight();
-	};
+	})();
 
 	return {
-		dot: dot(),
-		calcMax: calcMax
+		dot: dot()
 	};
-};
+}
